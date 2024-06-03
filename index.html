@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropbox-like Navigation Bar</title>
+    <!-- Link to Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .main-content {
+            flex: 1;
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navbar Component -->
+    <div class="navbar flex justify-between items-center bg-white py-2 px-4 shadow-md">
+        <div class="logo flex items-center">
+            <img src="assets/MBELE LOGO.jpeg" alt="Mbele Logo" class="h-8 w-8 mr-2">
+            <span class="text-xl font-bold">MBELE</span>
+        </div>
+        <div class="nav-links flex flex-1 justify-center space-x-6">
+            <a href="#home" class="text-black font-medium hover:text-blue-600 text-center px-3">Home</a>
+            <a href="#services" class="text-black font-medium hover:text-blue-600 text-center px-3">Services</a>
+            <a href="#about" class="text-black font-medium hover:text-blue-600 text-center px-3">About Us</a>
+            <a href="#why" class="text-black font-medium hover:text-blue-600 text-center px-3">Why Us</a>
+        </div>
+        <div class="cta flex items-center space-x-4">
+            <a href="#login" class="text-black font-medium">Log in</a>
+            <a href="#join-waitlist" class="border border-blue-600 text-blue-600 font-bold py-1 px-4 rounded hover:bg-blue-600 hover:text-white">Join Waitlist</a>
+            <button class="text-black font-medium">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Your main content goes here -->
+    </div>
+
+    <!-- Footer Component -->
+    <footer class="bg-blue-800 text-white py-2">
+        <div class="container mx-auto text-center">
+            <p class="font-bold">&copy; 2024 MBELE. All rights reserved.</p>
+            <nav class="mt-2">
+                <a href="#privacy" class="text-gray-400 hover:text-white px-2">Privacy Policy</a>
+                <a href="#terms" class="text-gray-400 hover:text-white px-2">Terms of Service</a>
+                <a href="#contact" class="text-gray-400 hover:text-white px-2">Contact Us</a>
+            </nav>
+            <div class="social-icons mt-2">
+                <a href="https://www.linkedin.com" target="_blank" class="text-gray-400 hover:text-white mx-2">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="text-gray-400 hover:text-white mx-2">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="text-gray-400 hover:text-white mx-2">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" class="text-gray-400 hover:text-white mx-2">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Dropdown Functionality -->
+    <script>
+        document.addEventListener('click', function(event) {
+            var dropdown = document.querySelector('.dropdown-menu');
+            var globe = document.querySelector('.dropdown button');
+
+            if (globe && globe.contains(event.target)) {
+                dropdown.classList.toggle('hidden');
+            } else if (dropdown) {
+                dropdown.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
